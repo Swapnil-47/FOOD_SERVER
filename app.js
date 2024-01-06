@@ -19,7 +19,7 @@ const CreateUser = require("./Routes/CreateUser")
 const DisplayData = require('./Routes/DisplayData')
 const orderData = require('./Routes/OrderData')
 app.get('/', (req, res) => {
-  res.send(result)
+  res.send('Hello World!')
 })
 app.use(express.json())
 app.use(cors());
