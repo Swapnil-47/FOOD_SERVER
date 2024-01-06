@@ -19,8 +19,7 @@ app.get('/', (req, res) => {
 DB().then(() => {
   // Start server after DB connection and data fetch
   app.use('/api', CreateUser);
-  app.use('/api', DisplayData);
-  app.use('/api', orderData);
+  app.use('/api', DisplayData); // This line mounts the DisplayData route
 
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
