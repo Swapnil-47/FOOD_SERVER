@@ -4,7 +4,7 @@ const app = express()
 const port = 5000
 const cors = require('cors');
 const DB = require('./db');
-DB(); 
+ const result = DB(); 
 app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Origin","*");
   res.header(
@@ -19,7 +19,7 @@ const CreateUser = require("./Routes/CreateUser")
 const DisplayData = require('./Routes/DisplayData')
 const orderData = require('./Routes/OrderData')
 app.get('/', (req, res) => {
-  res.json({"global" :global.food_items})
+  res.send(result)
 })
 app.use(express.json())
 app.use(cors());
