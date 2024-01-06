@@ -19,7 +19,7 @@ const CreateUser = require("./Routes/CreateUser")
 const DisplayData = require('./Routes/DisplayData')
 const orderData = require('./Routes/OrderData')
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.json({"global" :"global.food_items"})
 })
 app.use(express.json())
 app.use(cors());
