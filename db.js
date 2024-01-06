@@ -1,3 +1,4 @@
+// db.js
 const mongoose = require("mongoose");
 
 const password = "fhioQ3bpMkUhrvju";
@@ -10,17 +11,17 @@ const mongoDB = async () => {
 
     const fetched_data_cursor = mongoose.connection.db.collection("Sample").find({});
     const data = await fetched_data_cursor.toArray();
+    // console.log('Data fetched:', data);
 
     const foodCategory_cursor = mongoose.connection.db.collection("Category").find({});
     const catData = await foodCategory_cursor.toArray();
+    // console.log('Categories fetched:', catData);
 
     global.food_items = data;
     global.foodCategory = catData;
 
-    return { data, catData }; // Return fetched data
   } catch (error) {
     console.error("Error connecting to MongoDB :( \n:", error);
-    throw error;
   }
 };
 
