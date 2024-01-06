@@ -7,18 +7,14 @@ const foodCategory = [/* Your food categories array */];
 
 router.get('/foodData', (req, res) => {
     try {
-        // // Simulate a delay of 1 second (1000 milliseconds)
-        // setTimeout(() => {
-        //     // Ensure food_items and foodCategory are populated with data
-        //     const responseData = [food_items, foodCategory];
-        //     console.log(responseData); // Log the response data for debugging
+        // Simulate a delay of 1 second (1000 milliseconds)
+        setTimeout(() => {
+            // Ensure food_items and foodCategory are populated with data
+            const responseData = [food_items, foodCategory];
+            console.log(responseData); // Log the response data for debugging
 
-        //     res.status(200).json(responseData); // Send the response as JSON
-        // }, 1000); // Adjust the delay time as needed
-        res.status(200).json([
-            [{ id: 1, name: 'Item 1' }, { id: 2, name: 'Item 2' }],
-            [{ id: 1, name: 'Category 1' }, { id: 2, name: 'Category 2' }],
-          ]);
+            res.status(200).json(responseData); // Send the response as JSON
+        }, 1000); // Adjust the delay time as needed
     } catch (err) {
         console.log(err.message);
         res.status(500).send('Server Error :(');
