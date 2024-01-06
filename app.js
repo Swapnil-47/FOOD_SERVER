@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use(cors());
 app.use('/api',CreateUser)
-app.use('/api',DisplayData)
+app.use('/api',DB)
 app.use('/api',orderData)
 app.listen(port, () => {
   
