@@ -2,7 +2,8 @@
 const mongoose = require("mongoose");
 
 const password = "fhioQ3bpMkUhrvju";
-const MONGO_URL = `mongodb+srv://Mario44:${password}@cluster0.zasthev.mongodb.net/gofood_mern?retryWrites=true&w=majority`;
+// const MONGO_URL = `mongodb+srv://Mario44:${password}@cluster0.zasthev.mongodb.net/gofood_mern?retryWrites=true&w=majority`;
+const MONGO_URL = `mongodb://Mario44:${password}@ac-kfirdtb-shard-00-00.zasthev.mongodb.net:27017,ac-kfirdtb-shard-00-01.zasthev.mongodb.net:27017,ac-kfirdtb-shard-00-02.zasthev.mongodb.net:27017/?ssl=true&replicaSet=atlas-12xiu2-shard-0&authSource=admin&retryWrites=true&w=majority`
 
 const mongoDB = async () => {
   try {
