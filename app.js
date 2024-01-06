@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 app.use(express.json())
+app.use(cors());
 app.use('/api',CreateUser)
 app.use('/api',DisplayData)
 app.use('/api',orderData)
