@@ -3,9 +3,8 @@ const express = require('express')
 const app = express()
 const port = 5000
 const cors = require('cors');
-const {connectDB} = require('./db');
-const {router} = require('./db')
-connectDB(); 
+const DB = require('./db');
+DB(); 
 app.use((req,res,next)=>{
   res.setHeader("Access-Control-Allow-Origin","*");
   res.header(
@@ -25,7 +24,7 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use(cors());
 app.use('/api',CreateUser)
-app.use('/api',router)
+app.use('/api',DisplayData)
 app.use('/api',orderData)
 app.listen(port, () => {
   
