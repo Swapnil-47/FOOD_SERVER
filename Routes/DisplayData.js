@@ -1,13 +1,14 @@
+// DisplayData.js
 const express = require("express");
 const router = express.Router();
-const { foodItems, foodCategory } = require('../db');
 
-router.get('/foodData', async (req, res) => {
+router.get('/foodData', (req, res) => {
     try {
-        console.log("Food Items:", foodItems);
-        console.log("Food Category:", foodCategory);
+        console.log("Global Food Items:", global.food_items);
+        console.log("Global Food Category:", global.foodCategory);
 
-        const responseData = [foodItems, foodCategory];
+        const { food_items, foodCategory } = global;
+        const responseData = [food_items, foodCategory];
 
         console.log("Response Data:", responseData);
         res.send(responseData);
