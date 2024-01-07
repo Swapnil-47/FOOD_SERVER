@@ -31,10 +31,8 @@ const connectDB = async () => {
 // Define a route for /api/foodData
 router.get('/foodData', async (req, res) => {
   try {
-    // Handle the logic to send foodItems and foodCategory as response
-    const responseData = [foodItems, foodCategory];
-    console.log("Response Data:", responseData);
-    res.send(responseData);
+    // Send the data fetched from the database as a response
+    res.json({ foodItems, foodCategory });
   } catch (err) {
     console.log("Error:", err.message);
     res.status(500).send('Server Error :(');
