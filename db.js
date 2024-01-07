@@ -12,14 +12,14 @@ let foodCategory = [];
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGO_URL, { useNewUrlParser: true });
+    const connection = await mongoose.connect(MONGO_URL, { useNewUrlParser: true });
     console.log("Connected to DB :)");
 
-    const fetchedDataCursor = await mongoose.connection.db.collection("Sample").find({});
+    const fetchedDataCursor = connection.connection.db.collection("Sample").find({});
     foodItems = await fetchedDataCursor.toArray();
     console.log('Data fetched:', foodItems);
 
-    const foodCategoryCursor = await mongoose.connection.db.collection("Category").find({});
+    const foodCategoryCursor = connection.connection.db.collection("Category").find({});
     foodCategory = await foodCategoryCursor.toArray();
     console.log('Categories fetched:', foodCategory);
 
