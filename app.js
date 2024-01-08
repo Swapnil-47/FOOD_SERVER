@@ -21,6 +21,9 @@ const orderData = require('./Routes/OrderData')
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+// The app.use(express.json()) is a middleware function in Express.js that parses incoming
+//  JSON requests and puts the parsed data in req.body.
+//  This allows your Express application to handle JSON-encoded data.(json -> java script object)
 app.use(express.json())
 app.use(cors());
 app.use('/api',CreateUser)
